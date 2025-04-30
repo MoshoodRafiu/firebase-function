@@ -32,6 +32,11 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: "${{ github.workspace }}/functions/serviceAccountKey.json"
 
+      - name: Set environment variables
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" >> functions/.env
+          echo "API_BASE_URL=${{ secrets.API_BASE_URL }}" >> functions/.env
+
       - name: Deploy Firebase Functions
         run: |
           firebase deploy --only functions

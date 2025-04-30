@@ -26,12 +26,6 @@ const clients = [
 		baseUrl: "API_BASE_URL",
 		apiKey: "API_KEY",
 	},
-	{
-		name: "conferenceChat",
-		databaseName: "conference-chat",
-		baseUrl: "CONFERENCE_API_BASE_URL",
-		apiKey: "CONFERENCE_API_KEY",
-	},
 ];
 
 for (let { name, databaseName, baseUrl, apiKey } of clients) {
