@@ -39,7 +39,7 @@ jobs:
 
       - name: Deploy Firebase Functions
         run: |
-          firebase deploy --only functions
+          firebase deploy --only functions --non-interactive --debug
         env:
           GOOGLE_APPLICATION_CREDENTIALS: "${{ github.workspace }}/functions/serviceAccountKey.json"
 
