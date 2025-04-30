@@ -42,3 +42,9 @@ jobs:
           firebase deploy --only functions
         env:
           GOOGLE_APPLICATION_CREDENTIALS: "${{ github.workspace }}/functions/serviceAccountKey.json"
+
+      - name: Remove credentials file
+        if: success() || failure()
+        run: |
+          rm functions/serviceAccountKey.json
+          rm functions/.env
